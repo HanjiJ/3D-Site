@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  background: radial-gradient(circle at 30% 50%, #0a0a23, #000);
+  overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #00e0ff;
+  text-shadow: 0 0 20px #00e0ff;
+}
+.logo span {
+  color: #ff00ff;
+  text-shadow: 0 0 20px #ff00ff;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+.nav a:hover {
+  color: #00e0ff;
+  text-shadow: 0 0 10px #00e0ff;
+}
+
+/* ===== Бургер-меню ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  margin-left: auto;     
+  margin-right: 0;
+}
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #00e0ff;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 25px;
+  }
+
+  /* Скрываем стандартное меню */
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    gap: 25px;
+    padding: 25px 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    border-bottom: 1px solid rgba(0, 224, 255, 0.3);
+  }
+
+  /* Когда активно */
+  .nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Анимация крестика */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
+
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+canvas#bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.overlay {
+  z-index: 5;
+  text-align: center;
+}
+.main-title {
+  font-size: 3.5rem;
+  text-shadow: 0 0 30px #00e0ff;
+  animation: fadeIn 2s ease forwards;
+}
+.overlay p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-top: 15px;
+}
+.btn {
+  margin-top: 25px;
+  background: linear-gradient(90deg, #00e0ff, #ff00ff);
+  border: none;
+  padding: 12px 35px;
+  border-radius: 30px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px #00e0ff;
+}
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #ff00ff;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 120px 10%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(4px);
+}
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px #00e0ff;
+}
+.section p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.2);
+  transition: 0.3s;
+  backdrop-filter: blur(6px);
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 40px rgba(255, 0, 255, 0.4);
+}
+.card h3 {
+  color: #00e0ff;
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer a {
+  color: #00e0ff;
+  text-decoration: none;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 768px) {
+  .logo { font-size: 1.5rem; }
+  .nav { gap: 15px; }
+  .main-title { font-size: 2.2rem; }
+  .overlay p { font-size: 1rem; }
+  .section { padding: 80px 5%; }
+  .btn { padding: 10px 25px; font-size: 1rem; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeonX — 3D Мир</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+  <h1 class="logo">Neon<span>Program</span></h1>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav>
+    <ul class="nav" id="nav">
+      <li><a href="#about">О нас</a></li>
+      <li><a href="#services">Сервисы</a></li>
+      <li><a href="#projects">Проекты</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <section class="hero">
+    <canvas id="bg"></canvas>
+    <div class="overlay">
+      <h2 class="main-title">Создаем цифровые миры</h2>
+      <p>3D, веб-разработка, креатив и технологии будущего</p>
+      <button class="btn">Узнать больше</button>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <h2>О нас</h2>
+    <p>
+      Мы — команда разработчиков и дизайнеров, создающих интерактивные 3D-интерфейсы, веб-приложения и инновационные сайты. 
+      Наш подход основан на сочетании эстетики, производительности и современных технологий.
+    </p>
+  </section>
+
+  <section id="services" class="section services">
+    <h2>Наши сервисы</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>3D Дизайн</h3>
+        <p>Создание 3D-моделей, сцен и анимаций для сайтов и приложений.</p>
+      </div>
+      <div class="card">
+        <h3>Web Разработка</h3>
+        <p>Современные сайты с адаптивным дизайном и плавными эффектами.</p>
+      </div>
+      <div class="card">
+        <h3>AI Интеграции</h3>
+        <p>Добавляем интеллект в ваши проекты: чат-боты, анализ данных и генерация контента.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects">
+    <h2>Проекты</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>NeonCity</h3>
+        <p>Интерактивная 3D-карта будущего города.</p>
+      </div>
+      <div class="card">
+        <h3>CodeSpace</h3>
+        <p>Платформа для обучения веб-разработке с 3D-анимацией.</p>
+      </div>
+      <div class="card">
+        <h3>AI Vision</h3>
+        <p>Приложение для анализа изображений и распознавания объектов.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="footer">
+    <p>📧 Связаться с нами: <a href="mailto:info@neonx.ru">info@.ru</a></p>
+    <p>© 2025 — Все права защищены</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
